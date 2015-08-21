@@ -17,13 +17,15 @@
 <body>
 
 	<ul class="nav nav-tabs">
-		<li role="presentation" ><a data-toggle="tab"
-			href="#form">Add Assignment </a></li>
+		<li role="presentation"><a data-toggle="tab" href="#form">Add
+				Assignment </a></li>
+		<li role="presentation"><a data-toggle="tab" href="#weights">Change
+				Assignment Weights </a></li>
 		<li role="presentation"><a data-toggle="tab" href="#byStudent">
 				assignments by a student</a></li>
 		<li role="presentation"><a data-toggle="tab" href="#byType">
 				assignments by a type </a></li>
-					<li role="presentation"><a data-toggle="tab" href="#bySandT">
+		<li role="presentation"><a data-toggle="tab" href="#bySandT">
 				assignments by a type & Student</a></li>
 	</ul>
 	<div class="tab-content">
@@ -77,6 +79,42 @@
 						<div class="form-group">
 							<input type="submit" class="btn btn-primary btn-lg btn-block"
 								value="Add Student">
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+
+
+		<div id="weights" class="tab-pane fade">
+			<div class="container">
+				<br /> <br />
+
+				<div class="jumbotron">
+					<center>
+						<h1>Change Assignment Weights</h1>
+					</center>
+					<form class="form-horizontal" action="Studentform" method="post">
+						<input type="hidden" name="action" value="change">
+						<div class="form-group">
+							<input type="text" class="form-control" id="homework"
+								name="homework" placeholder="Homework" required>
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control" id="quiz" name="quiz"
+								placeholder="Quiz" required>
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control" id="test" name="test"
+								placeholder="Test" required>
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control" id="project"
+								name="project" placeholder="Project" required>
+						</div>
+						<div class="form-group">
+							<input type="submit" class="btn btn-primary btn-lg btn-block"
+								value="Change Weights">
 						</div>
 					</form>
 				</div>
