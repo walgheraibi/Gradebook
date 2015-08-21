@@ -17,7 +17,7 @@
 <body>
 
 	<ul class="nav nav-tabs">
-		<li role="presentation" class="active"><a data-toggle="tab"
+		<li role="presentation" ><a data-toggle="tab"
 			href="#form">Add Assignment </a></li>
 		<li role="presentation"><a data-toggle="tab" href="#byStudent">
 				assignments by a student</a></li>
@@ -41,6 +41,10 @@
 						<div class="form-group">
 							<input type="text" class="form-control" id="studentid"
 								name="studentid" placeholder="Student ID" required>
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control" id="classname"
+								name="classname" placeholder="Class Name" required>
 						</div>
 						<div class="form-group">
 							<input type="text" class="form-control" id="assignmentname"

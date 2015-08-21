@@ -24,7 +24,7 @@ public class Studentform extends HttpServlet {
      * @see HttpServlet#HttpServlet()
      */
     public Studentform() {
-        super();
+      //  super();
         // TODO Auto-generated constructor stub
     }
 
@@ -41,7 +41,7 @@ public class Studentform extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		 System.out.println("XXX");
 		
 		ResultSet result =null;
 		Connection conn = null;
@@ -66,16 +66,19 @@ public class Studentform extends HttpServlet {
 			  
 		String sql =""; 
 	
-		
+		 System.out.println("XXX");
 	        if(request.getParameter("action").equals("add"))
 	        {
-	        	String studentid=request.getParameter("studentid");
+	        String studentid=request.getParameter("studentid");
 	   		 String grade=request.getParameter("grade");
 	   		 String assignmentname=request.getParameter("assignmentname");
 	   		 String type=request.getParameter("type");
 	   		 String date=request.getParameter("date");
-	   		 sql ="insert into student (studentid,assignmentname,homeworktype, assignmentdate,grade) values("+
-						studentid +",'"+assignmentname+"','"+type+"', TO_DATE('"+date+"','MM-DD-YYYY'),"+Double.parseDouble(grade)+")";
+	   		 String classname= request.getParameter("classname");
+	   		 System.out.println(""+classname);
+	   		 sql ="insert into student (studentid,assignmentname,homeworktype, assignmentdate,grade,CLASSNAME) values("+
+						studentid +",'"+assignmentname+"','"+type+"', TO_DATE('"+date+"','MM-DD-YYYY'),"+Double.parseDouble(grade)+",'"+classname+"')";
+	   		 System.out.println(""+sql);
 	   		getResult(sql, conn);
 	        }
 	        else if(request.getParameter("action").equals("byStudent"))
@@ -171,7 +174,7 @@ public class Studentform extends HttpServlet {
 				}
 	        	 
 	        }
-	        
+	        System.out.println("XXX");
 	      getServletContext().getRequestDispatcher("/input.jsp").forward(request, response);
 	}
 	
